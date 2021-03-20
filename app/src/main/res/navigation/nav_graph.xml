@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.tolerans.vitrinova.ui.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+
+        <action
+            android:id="@+id/action_mainFragment_to_newShopListFragment"
+            app:destination="@id/newShopListFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_editorShopListFragment"
+            app:destination="@id/editorShopListFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_collectionsFragment"
+            app:destination="@id/collectionsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.tolerans.vitrinova.ui.ProductDetailFragment"
+        android:label="fragment_product_detail"
+        tools:layout="@layout/fragment_product_detail" >
+        <argument
+            android:name="item"
+            app:argType="com.tolerans.vitrinova.data.model.DiscoverItem"></argument>
+        <action
+            android:id="@+id/action_productDetailFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/newShopListFragment"
+        android:name="com.tolerans.vitrinova.ui.NewShopListFragment"
+        android:label="NewShopListFragment" >
+        <argument
+            android:name="item"
+            app:argType="com.tolerans.vitrinova.data.model.DiscoverItem"></argument>
+        <action
+            android:id="@+id/action_newShopListFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/collectionsFragment"
+        android:name="com.tolerans.vitrinova.ui.CollectionsFragment"
+        android:label="fragment_collections"
+        tools:layout="@layout/fragment_collections" >
+        <argument
+            android:name="item"
+            app:argType="com.tolerans.vitrinova.data.model.DiscoverItem"></argument>
+        <action
+            android:id="@+id/action_collectionsFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editorShopListFragment"
+        android:name="com.tolerans.vitrinova.ui.EditorShopListFragment"
+        android:label="fragment_editor_shop_list"
+        tools:layout="@layout/fragment_editor_shop_list" >
+        <argument
+            android:name="item"
+            app:argType="com.tolerans.vitrinova.data.model.DiscoverItem"></argument>
+        <action
+            android:id="@+id/action_editorShopListFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>
